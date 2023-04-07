@@ -71,32 +71,40 @@ const commentForm = document.getElementById('comment-form');
 const commentList = document.getElementById('comment-list');
 
 commentForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  
-  // Get the text of the comment from the form input
-  const commentInput = document.getElementById('comment-input').value;
+    event.preventDefault();
 
-  // Send a POST request to the API to add the comment
-  fetch('http://localhost:3000/comments', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ text: commentInput })
-  })
-  .then(response => response.json())
-  .then(comment => {
-    console.log(`Added comment: ${comment.text}`);
+    const commentInput = document.getElementById('comment-input').value;
+    const payload = { text: commentInput };
 
-    // Create a new list item element for the new comment
-    const commentItem = document.createElement('li');
-    commentItem.innerText = comment.text;
+    fetch('http://localhost:3000/comments', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error('Failed to add comment');
+        }
+        return response.json();
+    })
+    .then((comment) => {
+        console.log(`New comment added: ${comment.text}`);
+        
+        // Create a new list item element for the new comment
+        const commentItem = document.createElement('li');
+        commentItem.innerText = comment.text;
 
-    // Append the new comment to the comment list
-    commentList.appendChild(commentItem);
-  })
-  .catch(error => console.error('Error adding comment:', error))
-  .finally(() => commentForm.reset());
+        // Append the new comment to the comment list
+        commentList.appendChild(commentItem);
+    })
+    .catch((error) => {
+        console.error(error);
+    })
+    .finally(() => {
+        commentForm.reset();
+    });
 });
 
 // Text-to-speech function
