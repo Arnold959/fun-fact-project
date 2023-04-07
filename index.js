@@ -105,12 +105,8 @@ commentForm.addEventListener('submit', (event) => {
 function speakText(text) {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
+    utterance.addEventListener('end', () => {
+        synth.cancel();
+    });
     synth.speak(utterance);
 }
-
-
-
-
-
-
-
