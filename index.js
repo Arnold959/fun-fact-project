@@ -67,46 +67,46 @@ function likeFact(factId, rating) {
 
 
 // Handle comment form submissions  
-const commentForm = document.getElementById('comment-form');
-const commentList = document.getElementById('comment-list');
+
+const comments = document.getElementById('comment-form');
 
 commentForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const commentInput = document.getElementById('comment-input').value;
-    const payload = { text: commentInput };
-    
-    fetch('http://localhost:3000/comments', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-    })
-    
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error('Failed to add comment');
-        }
-        return response.json();
-    })
-    .then((comment) => {
-        console.log(`New comment added: ${comment.text}`);
-        
-        
-        // Create a new list item element for the new comment
-        const commentItem = document.createElement('li');
-        commentItem.innerText = comment.text;
+  const commentInput = document.getElementById('comment-input').value;
+  const payload = { text: commentInput };
 
-        // Append the new comment to the comment list
-        commentList.appendChild(commentItem);
-    })
-    .catch((error) => {
-        console.error(error);
-    })
-    .finally(() => {
-        commentForm.reset();
-    });
+  fetch('http://localhost:3000/comments', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Failed to add comment');
+    }
+    return response.json();
+  })
+  .then((comment) => {
+    console.log(`New comment added: ${comment.text}`);
+    
+    // Create a new list item element
+     const commentItem = document.createElement('li');
+     commentItem.innerText = comment.text;
+
+     // Append the new comment to the fact list
+    factList.appendChild(commentItem);
+    
+    
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    commentForm.reset();
+  });
 });
 
 // Text-to-speech function
@@ -125,12 +125,12 @@ const addFactForm = document.querySelector('#add-fact-form');
 // Handle add fact form submissions
 addFactForm.addEventListener('submit', (event) => {
   event.preventDefault();
-
+  
   const topicInput = document.querySelector('#topic-input').value;
   const factInput = document.querySelector('#fact-input').value;
   const sourceInput = document.querySelector('#source-input').value;
 
-  const payload = {
+  const payload = {    
     topic: topicInput,
     fact: factInput,
     source: sourceInput
