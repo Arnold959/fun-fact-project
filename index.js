@@ -110,3 +110,73 @@ function speakText(text) {
     });
     synth.speak(utterance);
 }
+
+
+const addFactForm = document.querySelector('#add-fact-form');
+
+// Handle add fact form submissions
+addFactForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const topicInput = document.querySelector('#topic-input').value;
+  const factInput = document.querySelector('#fact-input').value;
+  const sourceInput = document.querySelector('#source-input').value;
+
+  const payload = {
+    topic: topicInput,
+    fact: factInput,
+    source: sourceInput
+  };
+
+  fetch('http://localhost:3000/facts', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  })
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Failed to add fact');
+    }
+    return response.json();
+  })
+  .then((fact) => {
+    console.log(`New fact added: ${fact.fact}`);
+
+    // Create a new list item element for the new fact
+    const factItem = document.createElement('li');
+    const likes = document.createElement('span');
+    likes.innerText = 'likes: ';
+    const neutralEmoji = document.createElement('button');
+    neutralEmoji.innerText = '😐';
+    neutralEmoji.addEventListener('click', () => likeFact(fact.id, 'neutral'));
+    const interestingEmoji = document.createElement('button');
+    interestingEmoji.innerText = '😍';
+    interestingEmoji.addEventListener('click', () => likeFact(fact.id, 'interesting'));
+    const boringEmoji = document.createElement('button');
+    boringEmoji.innerText = '🥱';
+    boringEmoji.addEventListener('click', () => likeFact(fact.id, 'boring'));
+    const factText = document.createElement('p');
+    factText.innerText = `${fact.topic}: ${fact.fact} (${fact.source})`;            
+    factItem.appendChild(factText);
+    factItem.appendChild(likes);
+    factItem.appendChild(neutralEmoji);
+    factItem.appendChild(interestingEmoji);
+    factItem.appendChild(boringEmoji);
+
+    const speakButton = document.createElement('button');
+    speakButton.innerText = '🔊';
+    speakButton.addEventListener('click', () => speakText(`${fact.topic}: ${fact.fact}`));
+    factItem.appendChild(speakButton);
+
+    factList.appendChild(factItem);
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+  .finally(() => {
+    addFactForm.reset();
+  });
+});
+
