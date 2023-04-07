@@ -1,0 +1,71 @@
+{
+  "facts": [
+    {
+      "id": "1",
+      "topic": "historical facts",
+      "fact": "Cleopatra was not actually Egyptian! As far as historians can tell, Egypts famous femme fatal was actually Greek! She was a descendant of Alexander the Great's Macedonian general Ptolemy.",
+      "source": "https://parade.com/1099930/marynliles/history-facts/#:~:text=Cleopatra%20wasn%E2%80%99t%20actually%20Egyptian!%20As%20far%20as%20historians%20can%20tell%2C%20Egypt%E2%80%99s%20famous%20femme%20fatal%20was%20actually%20Greek!%20She%20was%20a%20descendant%20of%20Alexander%20the%20Great%27s%20Macedonian%20general%20Ptolemy",
+      "rating": "interesting"
+    },
+    {
+      "id": "2",
+      "topic": "historical facts",
+      "fact": "The shortest war in history lasted 38 minutes! It was between Britain and Zanzibar and is known as the Anglo-Zanzibar War. This war occurred on August 27, 1896. It was over the ascension of the next Sultan in Zanzibar and resulted in a British victory.",
+      "source": "https://parade.com/1099930/marynliles/history-facts/#:~:text=The%20shortest%20war%20in%20history%20lasted%2038%20minutes!%20It%20was%20between%20Britain%20and%20Zanzibar%20and%20is%20known%20as%20the%20Anglo%2DZanzibar%20War.%20This%20war%20occurred%20on%20August%2027%2C%201896.%20It%20was%20over%20the%20ascension%20of%20the%20next%20Sultan%20in%20Zanzibar%20and%20resulted%20in%20a%20British%20victory.",
+      "rating": "interesting"
+    },
+    {
+      "id": "3",
+      "topic": "historical facts",
+      "fact": "The first African woman to win the Nobel Peace Prize is from Kenya",
+      "source": "https://www.african-adventures.co.uk/10-facts-you-maybe-dont-know-about-kenya/#:~:text=The%20first%20African%20woman%20to%20win%20the%20Nobel%20Peace%20Prize%20is%20from%20Kenya",
+      "rating": "boring"
+    },
+    {
+      "id": "4",
+      "topic": "historical facts",
+      "fact": "62 languages are spoken across Kenya",
+      "source": "https://www.african-adventures.co.uk/10-facts-you-maybe-dont-know-about-kenya/#:~:text=62%20languages%20are%20spoken%20across%20Kenya"
+    },
+    {
+      "id": "5",
+      "topic": "historical facts",
+      "fact": "Kenya has two rainy seasons, but for the most part Kenyans enjoy a warm climate all year round",
+      "source": "",
+      "rating": "interesting"
+    },
+    {
+      "id": "6",
+      "topic": "scientific facts",
+      "fact": "Humans are capable of producing venom",
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=Humans%20are%20capable%20of%20producing%20venom",
+      "rating": "interesting"
+    },
+    {
+      "id": "7",
+      "topic": "scientific facts",
+      "fact": "Men are more likely to be colorblind than women",
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=Men%20are%20more%20likely%20to%20be%20colorblind%20than%20women",
+      "rating": "interesting"
+    },
+    {
+      "id": "8",
+      "topic": "scientific facts",
+      "fact": "About half of your body is bacteria",
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=About%20half%20of%20your%20body%20is%20bacteria"
+    },
+    {
+      "id": "9",
+      "topic": "scientific facts",
+      "fact": "It’s impossible to burp in space",
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=It%E2%80%99s%20impossible%20to%20burp%20in%20space"
+    },
+    {
+      "id": "10",
+      "topic": "scientific facts",
+      "fact": "A cloud can weigh around a million pounds",
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=A%20cloud%20can%20weigh%20around%20a%20million%20pounds",
+      "rating": "interesting"
+    }
+  ]
+}
