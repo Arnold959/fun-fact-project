@@ -180,3 +180,26 @@ addFactForm.addEventListener('submit', (event) => {
   });
 });
 
+const deleteButton = document.createElement('button');
+deleteButton.innerText = '❌';
+deleteButton.addEventListener('click', () => deleteFact(fact.id));
+factItem.appendChild(deleteButton);
+
+function deleteFact(factId) {
+    fetch(`http://localhost:3000/facts/${factId}`, {
+      method: 'DELETE'
+    })
+    .then((response) => {
+      if (response.ok) {
+        console.log(`Fact ${factId} deleted`);
+        const factItem = document.getElementById(`fact-${factId}`);
+        factList.removeChild(factItem);
+      } else {
+        console.error(`Failed to delete fact ${factId}: ${response.status} ${response.statusText}`);
+      }
+    })
+    .catch((error) => {
+      console.error(`Error deleting fact ${factId}:`, error);
+    });
+  }
+  
