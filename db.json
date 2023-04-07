@@ -19,7 +19,7 @@
       "topic": "historical facts",
       "fact": "The first African woman to win the Nobel Peace Prize is from Kenya",
       "source": "https://www.african-adventures.co.uk/10-facts-you-maybe-dont-know-about-kenya/#:~:text=The%20first%20African%20woman%20to%20win%20the%20Nobel%20Peace%20Prize%20is%20from%20Kenya",
-      "rating": "boring"
+      "rating": "interesting"
     },
     {
       "id": "4",
@@ -53,7 +53,8 @@
       "id": "8",
       "topic": "scientific facts",
       "fact": "About half of your body is bacteria",
-      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=About%20half%20of%20your%20body%20is%20bacteria"
+      "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=About%20half%20of%20your%20body%20is%20bacteria",
+      "rating": "interesting"
     },
     {
       "id": "9",
@@ -67,13 +68,6 @@
       "topic": "scientific facts",
       "fact": "A cloud can weigh around a million pounds",
       "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=A%20cloud%20can%20weigh%20around%20a%20million%20pounds",
-      "rating": "interesting"
-    },
-    {
-      "topic": "Historical",
-      "fact": "Kenya is home to Africa’s second-highest mountain",
-      "source": "https://www.african-adventures.co.uk/10-facts-you-maybe-dont-know-about-kenya/#:~:text=Kenya%20is%20home%20to%20Africa%E2%80%99s%20second%2Dhighest%20mountain",
-      "id": "K1IHpEF",
       "rating": "interesting"
     }
   ]
