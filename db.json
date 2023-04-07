@@ -5,7 +5,7 @@
       "topic": "historical facts",
       "fact": "Cleopatra was not actually Egyptian! As far as historians can tell, Egypts famous femme fatal was actually Greek! She was a descendant of Alexander the Great's Macedonian general Ptolemy.",
       "source": "https://parade.com/1099930/marynliles/history-facts/#:~:text=Cleopatra%20wasn%E2%80%99t%20actually%20Egyptian!%20As%20far%20as%20historians%20can%20tell%2C%20Egypt%E2%80%99s%20famous%20femme%20fatal%20was%20actually%20Greek!%20She%20was%20a%20descendant%20of%20Alexander%20the%20Great%27s%20Macedonian%20general%20Ptolemy",
-      "rating": "interesting"
+      "rating": "neutral"
     },
     {
       "id": "2",
@@ -70,5 +70,8 @@
       "source": "https://www.rd.com/list/science-facts-never-learned/#:~:text=A%20cloud%20can%20weigh%20around%20a%20million%20pounds",
       "rating": "interesting"
     }
+  ],
+  "comment": [
+    {}
   ]
 }

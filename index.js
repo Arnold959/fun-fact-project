@@ -68,44 +68,37 @@ function likeFact(factId, rating) {
 
 // Handle comment form submissions  
 
-const comments = document.getElementById('comment-form');
+const form = document.getElementById('comment-form');
+const submitButton = form.querySelector('button[type="submit"]');
 
-commentForm.addEventListener('submit', (event) => {
+submitButton.addEventListener('click', (event) => {
   event.preventDefault();
+  
+  const name = document.getElementById('name').value;
+  const comment = document.getElementById('comment').value;
+  
+  const data = {
+    name,
+    comment,
+  };
 
-  const commentInput = document.getElementById('comment-input').value;
-  const payload = { text: commentInput };
-
-  fetch('http://localhost:3000/comments', {
+  fetch('https://localhost:3000/comment', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(data),
   })
   .then((response) => {
-    if (!response.ok) {
-      throw new Error('Failed to add comment');
+    if (response.ok) {
+      alert('Comment submitted successfully!');
+    } else {
+      alert('There was a problem submitting your comment.');
     }
-    return response.json();
-  })
-  .then((comment) => {
-    console.log(`New comment added: ${comment.text}`);
-    
-    // Create a new list item element
-     const commentItem = document.createElement('li');
-     commentItem.innerText = comment.text;
-
-     // Append the new comment to the fact list
-    factList.appendChild(commentItem);
-    
-    
   })
   .catch((error) => {
-    console.error(error);
-  })
-  .finally(() => {
-    commentForm.reset();
+    console.error('Error submitting comment:', error);
+    alert('There was a problem submitting your comment.');
   });
 });
 
