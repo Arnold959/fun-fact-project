@@ -82,7 +82,7 @@ submitButton.addEventListener('click', (event) => {
     comment,
   };
 
-  fetch('https://localhost:3000/comment', {
+  fetch('https://localhost:3000/comments', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
