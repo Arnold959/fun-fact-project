@@ -75,8 +75,7 @@ commentForm.addEventListener('submit', (event) => {
 
     const commentInput = document.getElementById('comment-input').value;
     const payload = { text: commentInput };
-    console.log(commentInput)
-
+    
     fetch('http://localhost:3000/comments', {
         method: 'POST',
         headers: {
@@ -84,7 +83,7 @@ commentForm.addEventListener('submit', (event) => {
         },
         body: JSON.stringify(payload)
     })
-    console.log(payload)
+    
     .then((response) => {
         if (!response.ok) {
             throw new Error('Failed to add comment');
