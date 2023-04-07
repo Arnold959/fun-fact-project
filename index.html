@@ -28,11 +28,16 @@
             <button type="submit">Add Fact</button>
           </form>
           
-        <form id="comment-form">
-            <label for="comment-input">Add your comment:</label>
-            <input type="text" id="comment-input" name="comment-input">
+          <form id="comment-form">
+            <label for="comment-input">Add a Comment:</label>
+            <input type="text" id="comment-input" name="comment-input" required>
             <button type="submit">Submit</button>
-        </form>
+          </form>
+          
+          <ul id="comment-list">
+            <!-- Comments will be added here dynamically -->
+          </ul>
+          
     </div>
     <script src="index.js"></script>
 </body>     
