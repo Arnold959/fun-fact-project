@@ -34,6 +34,11 @@ fetch("http://localhost:3000/facts")
             speakButton.innerText = '🔊';
             speakButton.addEventListener('click', () => speakText(fact.fact));
             factItem.appendChild(speakButton);
+            
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = '❌';
+            deleteButton.addEventListener('click', () => deleteFact(fact.id));
+            factItem.appendChild(deleteButton);
 
             
         });
@@ -180,10 +185,7 @@ addFactForm.addEventListener('submit', (event) => {
   });
 });
 
-const deleteButton = document.createElement('button');
-deleteButton.innerText = '❌';
-deleteButton.addEventListener('click', () => deleteFact(fact.id));
-factItem.appendChild(deleteButton);
+
 
 function deleteFact(factId) {
     fetch(`http://localhost:3000/facts/${factId}`, {
