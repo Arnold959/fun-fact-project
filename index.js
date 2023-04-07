@@ -29,6 +29,12 @@ fetch("http://localhost:3000/facts")
             factItem.appendChild(neutralEmoji);
             factItem.appendChild(interestingEmoji);
             factItem.appendChild(boringEmoji);
+
+            const speakButton = document.createElement('button');
+            speakButton.innerText = '🔊';
+            speakButton.addEventListener('click', () => speakText(fact.fact));
+            factItem.appendChild(speakButton);
+
             
         });
     });
@@ -95,6 +101,12 @@ commentForm.addEventListener('submit', (event) => {
     });
 });
 
+// Text-to-speech function
+function speakText(text) {
+    const synth = window.speechSynthesis;
+    const utterance = new SpeechSynthesisUtterance(text);
+    synth.speak(utterance);
+}
 
 
 
