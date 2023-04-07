@@ -68,8 +68,9 @@ function likeFact(factId, rating) {
 
 // Handle comment form submissions  
 
-const form = document.getElementById('comment-form');
-const submitButton = form.querySelector('button[type="submit"]');
+const commentForm = document.getElementById('comment-form');
+const submitButton = commentForm.querySelector('button[type="submit"]');
+
 
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
@@ -83,7 +84,7 @@ submitButton.addEventListener('click', (event) => {
   };
 
   fetch('https://localhost:3000/comments', {
-    method: 'POST',
+    method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
